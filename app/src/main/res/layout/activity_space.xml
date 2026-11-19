@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- 顶部三个入口 -->
+    <LinearLayout
+        android:id="@+id/nav_bar"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@drawable/bg_nav"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@string/nav_space_stations"
+                android:src="@drawable/space_station_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_space_stations"
+                android:textColor="#555555"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@string/nav_flights"
+                android:src="@drawable/rocket_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_flights"
+                android:textColor="#555555"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@string/nav_rovers"
+                android:src="@drawable/rover_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_rovers"
+                android:textColor="#555555"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/nav_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#C4C4C4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nav_bar" />
+
+    <!-- 航线：DCA  <->  MARS -->
+    <TextView
+        android:id="@+id/tv_from"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_route_block"
+        android:gravity="center"
+        android:text="@string/city_dca"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/iv_arrows"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nav_divider" />
+
+    <ImageView
+        android:id="@+id/iv_arrows"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:contentDescription="@string/route_switch"
+        android:padding="8dp"
+        android:src="@drawable/double_arrows"
+        app:layout_constraintBottom_toBottomOf="@id/tv_from"
+        app:layout_constraintEnd_toStartOf="@id/tv_to"
+        app:layout_constraintStart_toEndOf="@id/tv_from"
+        app:layout_constraintTop_toTopOf="@id/tv_from" />
+
+    <TextView
+        android:id="@+id/tv_to"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/bg_route_block"
+        android:gravity="center"
+        android:text="@string/city_mars"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/iv_arrows"
+        app:layout_constraintTop_toTopOf="@id/tv_from" />
+
+    <!-- 单程开关 -->
+    <TextView
+        android:id="@+id/tv_one_way"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_chip"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="@string/one_way"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/switch_one_way"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_from" />
+
+    <Switch
+        android:id="@+id/switch_one_way"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="@id/tv_one_way"
+        app:layout_constraintEnd_toEndOf="@id/tv_to"
+        app:layout_constraintTop_toTopOf="@id/tv_one_way" />
+
+    <TextView
+        android:id="@+id/tv_traveller"
+        android:layout_width="120dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_chip"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="@string/one_traveller"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_one_way" />
+
+    <!-- 星球 -->
+    <ImageView
+        android:id="@+id/iv_planet"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/planet"
+        android:src="@drawable/galaxy"
+        app:layout_constraintBottom_toTopOf="@id/btn_depart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_traveller"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <!-- 底部按钮 -->
+    <TextView
+        android:id="@+id/btn_depart"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_depart"
+        android:gravity="center"
+        android:letterSpacing="0.15"
+        android:text="@string/depart"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

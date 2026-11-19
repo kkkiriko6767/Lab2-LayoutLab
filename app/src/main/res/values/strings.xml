@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">实验二 LayoutLab</string>
+    <string name="main_title">实验二 · Android 界面布局</string>
+    <string name="main_desc">四种布局的综合练习：线性布局、表格布局各一个界面，约束布局两个界面。</string>
+    <string name="entry_linear">1. 线性布局：16 个方格</string>
+    <string name="entry_table">2. 表格布局：菜单列表</string>
+    <string name="entry_calc">3. 约束布局：计算器</string>
+    <string name="entry_space">4. 约束布局：太空旅行</string>
+    <string name="calc_input">Input</string>
+    <string name="nav_space_stations">Space Stations</string>
+    <string name="nav_flights">Flights</string>
+    <string name="nav_rovers">Rovers</string>
+    <string name="route_switch">切换航线</string>
+    <string name="city_dca">DCA</string>
+    <string name="city_mars">MARS</string>
+    <string name="one_way">One Way</string>
+    <string name="one_traveller">1 Traveller</string>
+    <string name="planet">星球</string>
+    <string name="depart">DEPART</string>
+</resources>
